@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" root="CARD_SUIT">
+  <rule id="CARD_SUIT" scope="public">
+    <one-of>
+      <item>
+        <ruleref special="GARBAGE"/>
+      </item>
+      <item>
+        <one-of>
+          <item>Hearts</item>
+
+          <item>Heart</item>
+        </one-of>
+        <tag>out.suit = "Hearts";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Clubs</item>
+
+          <item>klubz</item>
+        </one-of>
+        <tag>out.suit = "Clubs";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Diamonds</item>
+
+          <item>Diamond</item>
+        </one-of>
+        <tag>out.suit = "Diamonds";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Spades</item>
+
+          <item>Spadez</item>
+          <item>Spaades</item>
+        </one-of>
+        <tag>out.suit = "Spades";</tag>
+      </item>
+    </one-of>
+  </rule>
+
+</grammar>

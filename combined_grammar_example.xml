@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar xmlns="http://www.w3.org/2001/06/grammar" xml:lang="en-US" root="TOPLEVEL">
+  <rule id="TOPLEVEL" scope="public">
+    <item repeat="0-1">
+      <ruleref special="GARBAGE"/>
+    </item>
+    <one-of>
+      <item>
+        <one-of>
+          <item>
+            <tag> out.suit="";</tag>
+            <item>
+              <ruleref uri="#CARD_SUIT"/>
+              <tag>out.suit = out.suit + rules.CARD_SUIT.suit;</tag>
+            </item>
+            <item>
+              <ruleref uri="#CARD_RANK"/>
+              <tag>out.rank=rules.CARD_RANK.rank;</tag>
+            </item>
+          </item>
+        </one-of>
+      </item>
+      <item>
+        <tag> out.suit="";</tag>
+        <item>
+          <ruleref uri="#CARD_SUIT"/>
+          <tag>out.suit = out.suit + rules.CARD_SUIT.suit;</tag>
+        </item>
+      </item>
+      <item>
+        <ruleref uri="#CARD_RANK"/>
+        <tag>out.rank=rules.CARD_RANK.rank;</tag>
+      </item>
+    </one-of>
+  </rule>
+  
+  
+  <rule id="CARD_SUIT" scope="public">
+    
+    <one-of>
+      <item>
+        <item repeat="0-1">
+          <ruleref special="GARBAGE"/>
+        </item>
+        <one-of>
+          <item>Hearts</item>
+          <item>Heart</item>
+        </one-of>
+        <tag>out.suit = "Hearts";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Clubs</item>
+          <item>klubz</item>
+        </one-of>
+        <tag>out.suit = "Clubs";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Diamonds</item>
+          <item>Diamond</item>
+        </one-of>
+        <tag>out.suit = "Diamonds";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Spades</item>
+          <item>Spadez</item>
+          <item>Spaades</item>
+        </one-of>
+        <tag>out.suit = "Spades";</tag>
+      </item>
+    </one-of>
+  </rule>
+  <rule id="CARD_RANK" scope="public">
+    <one-of>
+      <item repeat="0-1">
+        <ruleref special="GARBAGE"/>
+      </item>
+      <item>
+        <one-of>
+          <item>ace</item>
+          <item>acse</item>
+          <item>bullet</item>
+          <item>rocket</item>
+        </one-of>
+        <tag>out.rank = "Ace";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>two</item>
+          <item>duce</item>
+        </one-of>
+        <tag>out.rank = "Two";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>three</item>
+        </one-of>
+        <tag>out.rank = "Three";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>four</item>
+        </one-of>
+        <tag>out.rank = "Four";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Five</item>
+        </one-of>
+        <tag>out.rank = "Five";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Six</item>
+        </one-of>
+        <tag>out.rank = "Six";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>seven</item>
+          <item>Hocky Stick</item>
+        </one-of>
+        <tag>out.rank = "Seven";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Snowman</item>
+          <item>Fat Lady</item>
+          <item>Ocho</item>
+        </one-of>
+        <tag>out.rank = "Eight";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>nine</item>
+        </one-of>
+        <tag>out.rank = "nine";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Tem</item>
+          <item>Dime</item>
+        </one-of>
+        <tag>out.rank = "Ten";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>Tem</item>
+          <item>Dime</item>
+        </one-of>
+        <tag>out.rank = "Ten";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>jack</item>
+        </one-of>
+        <tag>out.rank = "jack";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>king</item>
+        </one-of>
+        <tag>out.rank = "king";</tag>
+      </item>
+      <item>
+        <one-of>
+          <item>queen</item>
+        </one-of>
+        <tag>out.rank = "queen";</tag>
+      </item>
+    </one-of>
+  </rule>
+</grammar>
